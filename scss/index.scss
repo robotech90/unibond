@@ -1,0 +1,49 @@
+@forward "globals";
+@use "./utils" as u;
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+$toastify-toast-width: 360px;
+
+:root {
+    --app-color: #f4bb00;
+    --common-app-text: #f4bb00;
+    --white: #fff;
+    --common-app-bg: #ebf9f5;
+    --text-color: #2b2e35;
+    --status-bad: #d12c2c;
+}
+
+@include u.breakpoint(xsmall) {
+    .login-form {
+        & .fs-16px {
+            font-size: u.rem(12);
+        }
+
+        & .fs-40px {
+            font-size: u.rem(28);
+        }
+
+        & .fs-10px {
+            font-size: u.rem(9);
+        }
+    }
+}
+@media (max-width: 767px) {
+    * {
+        font-size: 12px;
+    }
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
+    z-index: 999;
+}
